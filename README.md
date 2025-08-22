@@ -1,4 +1,4 @@
-# 🚀 Big Data Pipeline on Azure  
+# NIKU ---:) 🚀 Big Data Pipeline on Azure  
 
 This project demonstrates a **modern end-to-end Big Data Pipeline** using **Microsoft Azure**, capable of ingesting diverse datasets from multiple sources, transforming them at scale, and enabling advanced analytics through BI tools.  
 
