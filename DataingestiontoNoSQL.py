@@ -3,11 +3,11 @@
 # importing module
 from pymongo import MongoClient
 
-hostname = "mo5pwf.h.filess.io"
-database = "olistDataNoSQL_completely"
-port = "27018"
-username = "olistDataNoSQL_completely"
-password = "dc6c7c17e95e66f637266ac829fba67e86d781e6"
+hostname = "----"
+database = "----"
+port = "----"
+username = "---"
+password = "----"
 
 uri = "mongodb://" + username + ":" + password + "@" + hostname + ":" + port + "/" + database
 
