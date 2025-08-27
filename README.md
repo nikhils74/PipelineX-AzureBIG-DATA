@@ -1,4 +1,4 @@
-# EvecT ---:) 🚀 Big Data Pipeline on Azure  
+PipelineX - Big Data Pipeline on Azure  
 
 ![Arch](ArchitectureDiagram.png)
 
