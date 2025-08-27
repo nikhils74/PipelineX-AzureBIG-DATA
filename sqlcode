@@ -1,0 +1,80 @@
+
+-- https://learn.microsoft.com/en-us/azure/synapse-analytics/sql/develop-tables-cetas
+
+-- This is auto-generated code
+SELECT
+    TOP 100 *
+FROM
+    OPENROWSET(
+        BULK 'https://synapseolistdefault.dfs.core.windows.net/synapseolistfs/customers.csv',
+        FORMAT = 'CSV',
+        PARSER_VERSION = '2.0'
+    ) AS [result]
+
+
+
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://olistdatastorageaccount.dfs.core.windows.net/olistdata/silver/',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--- https://olistdatastorageaccount.blob.core.windows.net/olistdata/silver
+
+
+
+create schema gold
+
+create view gold.final 
+as 
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://olistdatastorageaccount.dfs.core.windows.net/olistdata/silver/',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+
+
+select * from gold.final
+
+
+
+https://web.azuresynapse.net/en/authoring/analyze/sqlscripts/view%20final%202?workspace=%2Fsubscriptions%2F733a395f-9cf9-4ddd-a694-4070e3581376%2FresourceGroups%2Fecomm-live%2Fproviders%2FMicrosoft.Synapse%2Fworkspaces%2Folist-synapse
+
+
+
+
+-- CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'd8TySvmWr4rPBUk';
+-- CREATE DATABASE SCOPED CREDENTIAL min WITH IDENTITY = 'Managed Identity';
+
+-- select * from sys.database_credentials
+
+CREATE EXTERNAL FILE FORMAT extfileformat WITH (
+    FORMAT_TYPE = PARQUET,
+    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'
+);
+
+CREATE EXTERNAL DATA SOURCE goldlayer WITH (
+    LOCATION = 'https://olistdatastorageaccount.dfs.core.windows.net/olistdata/gold/',
+    CREDENTIAL = madmin
+);
+
+
+CREATE EXTERNAL TABLE gold.finaltable WITH (
+        LOCATION = 'Serving',
+        DATA_SOURCE = goldlayer,
+        FILE_FORMAT = extfileformat
+) AS
+SELECT * FROM gold.final2;
+
+
+
+select * from gold.finaltable
+
+select * from gold.final2
+
+
