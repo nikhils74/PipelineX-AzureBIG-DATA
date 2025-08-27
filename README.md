@@ -36,7 +36,3 @@ This project demonstrates a **modern end-to-end Big Data Pipeline** using **Micr
 - Centralized, governed storage for raw and curated datasets  
 - Optimized transformations and enrichment for advanced analytics  
 - Seamless integration with BI tools for **interactive dashboards and data-driven decisions**  
-
----
-
-📊 This project highlights **practical data engineering skills** in cloud environments, showcasing the ability to design and implement production-ready pipelines for real-world analytics.  
