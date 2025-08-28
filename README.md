@@ -1,8 +1,8 @@
 # PipelineX
-# End-to-End Data Engineering Pipeline on Azure (Brazilian E-Commerce Dataset)
+# End-to-End Data Engineering Pipeline on Azure 
 
 ## 📌 Project Overview
-This project demonstrates a complete **data engineering pipeline** built on **Microsoft Azure** using the [Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).  
+This project demonstrates a complete **data engineering pipeline** built on **Microsoft Azure** using the [Brazilian Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).  
 The solution is designed with the **Medallion Architecture** (Bronze → Silver → Gold) to ensure scalable, reliable, and analytics-ready data processing.
 
 ---
